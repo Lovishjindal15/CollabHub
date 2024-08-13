@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../HTML TUTORIAL"
+		},
+		{
+			"path": "../../server"
+		},
+		{
+			"path": "../../../Dropbox/nodejs-june-2024"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "project"
+	}
+}

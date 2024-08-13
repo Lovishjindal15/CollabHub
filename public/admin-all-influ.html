@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+    <script>
+        var module = angular.module("mykuchModule", []);
+        var controller = module.controller("mykuchcontroller", function ($scope, $http) {
+            $scope.jsonArrayAll;
+            $scope.getAll = function () {
+                let url = "/fetch-influ-emails";
+                $http.get(url).then(function (response) {
+                    $scope.jsonArrayAll = response.data;
+                }, function (err) {
+                    alert(err);
+                });
+            }
+
+        })
+    </script>
+
+    <title>Document</title>
+
+</head>
+
+<body ng-app="mykuchModule" ng-controller="mykuchcontroller" style="background-color:#FFF2D7 ;">
+    <center>
+        <div style="background-color:#E68369; color: white; height: 50px;">
+          <center><h2  style="padding-top: 7px;">INFLUENCER'S DETAILS</h2></center>
+      </div>
+      </center>
+
+    <center><input type="button" value="All influencers" ng-click="getAll();" </center>
+        <div class="container">
+            <table width="700" border="1" class="table"  >
+                     <tr>
+                    <th>Sr.No</th>
+                    <th>email</th>
+                    <th>name</th>
+                    <th>address</th>
+                    <th>city</th>
+                    <th>insta</th>
+                    <th>youtube</th>
+                    <th>content</th>
+                    <th>gender</th>
+                    <th>dob</th>
+                    <th>pic</th>
+                </tr>
+                <tr ng-repeat="obj in jsonArrayAll">
+                    <td>{{$index+1}}</td>
+                    <td>{{obj.email}}</td>
+                    <td>{{obj.name}}</td>
+                    <td>{{obj.address}}</td>
+                    <td>{{obj.city}}</td>
+                    <td>{{obj.insta}}</td>
+                    <td>{{obj.youtube}}</td>
+                    <td>{{obj.content}}</td>
+                    <td>{{obj.gender}}</td>
+                    <td>{{obj.dob}}</td>
+                    <td>
+                        {{obj.ppic}}
+                        <br>
+                        <img src="uploads/{{obj.ppic}}" width="50" height="50" alt="">
+                    </td>
+                </tr>
+            </div>   
+</body>
+
+</html>

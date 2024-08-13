@@ -1,0 +1,28 @@
+.card{
+    float: left;
+    margin: 20px;
+    align-self: center;
+    padding: 10px;
+    margin-top: 80px;
+}
+
+.text{
+    
+   
+    height: 35px;
+    color:black;
+    font-size: 30px;
+    padding-bottom: 5px;
+  margin-bottom: 5px;
+  margin-top: 2.5px;
+  padding-top: -2.5px;
+    
+}
+.card-body{
+    width: 280px;
+    margin-top: 20px;
+    height:auto
+    
+}.cardfull{
+  margin-left: 80px;
+}
