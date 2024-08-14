@@ -12,12 +12,21 @@ app.use(express.urlencoded("true"));
 
 app.use(fileuploader());
 
-const config = {
-      host: "127.0.0.1",
-      user: "root",
-      password: "Goodvibesonly@123",
-      database: "project",
-    };
+let config = {
+        host: "bjhxy6xf8uge35fcmz3l-mysql.services.clever-cloud.com",
+        user: "utnbunigkkegd8pk",
+        password: "3oSaF5TmIZsZYgSVsi4Y",
+        database: "bjhxy6xf8uge35fcmz3l",
+        dateStrings: true,
+        keepAliveInitialDelay:10000,
+        enableKeepAlive:true,
+    }
+// const config = {
+//       host: "127.0.0.1",
+//       user: "root",
+//       password: "Goodvibesonly@123",
+//       database: "project",
+//     };
 
 var mysql = mysql2.createConnection(config);
 mysql.connect(function (err) {
